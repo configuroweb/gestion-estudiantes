@@ -8,7 +8,7 @@ if (strlen($_SESSION['sturecmsaid'] == 0)) {
   if (isset($_POST['submit'])) {
     $cname = $_POST['cname'];
     $section = $_POST['section'];
-    $sql = "insert into tblclass(ClassName,Sección)values(:cname,:section)";
+    $sql = "insert into tblclass(ClassName,Section)values(:cname,:section)";
     $query = $dbh->prepare($sql);
     $query->bindParam(':cname', $cname, PDO::PARAM_STR);
     $query->bindParam(':section', $section, PDO::PARAM_STR);
@@ -18,7 +18,7 @@ if (strlen($_SESSION['sturecmsaid'] == 0)) {
       echo '<script>alert("Año ha sido agregado correctamente")</script>';
       echo "<script>window.location.href ='add-class.php'</script>";
     } else {
-      echo '<script>alert("Algo salió mal, favor re inténtalo de nuevo")</script>';
+      echo '<script>alert("Algo salió mal. Favor reintentar")</script>';
     }
   }
 ?>
@@ -55,7 +55,7 @@ if (strlen($_SESSION['sturecmsaid'] == 0)) {
                   <div class="form-group">
                     <label for="exampleInputEmail3">Sección</label>
                     <select name="section" class="form-control" required='true'>
-                      <option value="">Escoge Sección</option>
+                      <option value="">Elige Sección</option>
                       <option value="A">A</option>
                       <option value="B">B</option>
                       <option value="C">C</option>
@@ -64,7 +64,7 @@ if (strlen($_SESSION['sturecmsaid'] == 0)) {
                       <option value="F">F</option>
                     </select>
                   </div>
-                  <button type="submit" class="btn btn-primary mr-2" name="submit">Add</button>
+                  <button type="submit" class="btn btn-primary mr-2" name="submit">Agregar</button>
 
                 </form>
               </div>
